@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+int main() {
+int n, d;
+    int a[100];
+    cout << "Imput array size ";
+    cin >> n;
+    cout << "Imput array elements ";
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+
+    d = a[1] - a[0];
+    for (int i = 2; i < n; i++)
+    {
+        if (a[i] - a[i - 1] != d)
+        {
+            d = 0;
+            break;
+        }
+    }
+
+    if (d == 0)
+    {
+        cout << d << endl;
+    }
+    else
+    {
+        cout << "Progression difference: " << d << endl;
+    }
+
+}
