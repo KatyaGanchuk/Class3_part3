@@ -1,0 +1,63 @@
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+
+using namespace std;
+
+int main() {
+
+  const int N = 10;
+  int A[N];
+
+ 
+  srand(time(0));
+  for (int i = 0; i < N; i++) {
+    A[i] = rand() % 100;
+    cout << A[i] << " ";
+  }
+  cout << endl;
+
+  
+  int min_even = A[1];
+  for (int i = 3; i < N; i += 2) {
+    if (A[i] < min_even) {
+      min_even = A[i];
+    }
+  }
+
+  cout << "Min element " << min_even << endl;
+
+}
+або
+#include <iostream>
+#include <ctime>
+#include <vector>
+#include <cstdlib>
+using namespace std;
+
+int main() {
+int n;
+    cin >> n;
+    int min = INT_MAX;
+    vector<int>A(n); 
+    for (int i = 0; i < A.size(); i++)
+    {
+        A[i] = rand() % n; 
+    }
+    cout << "Massiv" << endl;
+    for (int i = 0; i < A.size(); i++)
+    {
+        cout << A[i] << "";
+    }
+    cout << endl;
+    for (int i = 0; i < A.size(); i++)
+    {
+        if (i % 2)
+        {
+            if (A[i] < min)
+                min = A[i]; 
+        }
+    }
+    cout << "Min = " << min << endl;
+    
+}
