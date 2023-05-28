@@ -1,0 +1,74 @@
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+using namespace std;
+
+int main() {
+ const int N = 10; 
+    int arr[N];
+    srand(time(NULL));
+ 
+    for(int i = 0; i < N; i++)
+    {
+        arr[i] = rand() % 10; 
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+ 
+    int flag = arr[0] % 2; 
+ 
+    for(int i = 1; i < N; i++)
+    {
+        if((arr[i] % 2 == 0 && flag == 0) || (arr[i] % 2 != 0 && flag == 1))
+            continue;
+        else
+        {
+            cout << i << endl;
+            break;
+        }
+    }
+ 
+    if(arr[N-1] % 2 != flag)
+    {
+        cout << N << endl;
+    }
+    else
+    {
+        cout << 0 << endl;
+    }
+}
+або
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int n;
+    cin >> n; 
+
+    int a[n];
+
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i]; 
+    }
+
+    int parity = a[0] % 2; 
+
+    for (int i = 0; i < n; i++)
+    {
+        if (a[i] % 2 != parity) 
+        {
+            cout << i + 1 << endl; 
+          
+        }
+
+        parity = 1 - parity; 
+        
+        
+    }
+
+    cout << 0 << endl; 
+    
+    
+}
